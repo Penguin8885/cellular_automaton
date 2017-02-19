@@ -1,49 +1,6 @@
-#include <iostream>
-#include <cstdlib>
-#include <vector>
+#include "bool_map.h"
 
 using namespace std;
-
-class bool_map {
-private:
-    int size_x;
-    int size_y;
-    vector< vector<bool> > data;
-
-public:
-    bool_map(int size_x, int size_y): size_x(size_x), size_y(size_y) {
-        data.resize(size_x);
-        for(int i = 0; i < size_x; i++){
-            data[i].resize(size_y, false);
-        }
-    }
-
-public:
-    int get_size_x(){
-        return size_x;
-    }
-    int get_size_y(){
-        return size_y;
-    }
-    vector<bool>& operator[](int x){
-        return data[x];
-    }
-
-public:
-    void print(){
-        system("cls");
-        for(int i = 0; i < size_y; i++){
-            string str("");
-            for(int j = 0; j < size_x; j++){
-                if(data[j][i])
-                    str += "#";
-                else
-                    str += " ";
-            }
-            cout << str << '\n';
-        }
-    }
-};
 
 class langtons_ant {
 private:
